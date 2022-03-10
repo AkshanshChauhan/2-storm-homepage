@@ -10,9 +10,49 @@
 <style>
     *{
         margin: 0%;
+        scroll-behavior: smooth;
     }
 
-    @media only screen and (max-width: 600px) {
+    .offer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: rgb(165, 21, 21);
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        border-radius: 50%;
+    }
+
+    .content1 {
+        background-color: rgb(201, 0, 0);
+        color: white;
+        padding: 10px;
+    }
+
+    .tamplet p {
+        color: rgb(255, 255, 255);
+        text-align: center;
+        font-size: xx-small;
+    }
+
+    h1 {
+        position: absolute; 
+        color: red;
+        top: -15px;
+    }
+
+    @media screen and (max-width: 600px) {
+        main {
+            position: relative;
+            flex-direction: column;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            margin: 10px;
+        }
+
         main img {
             width: 95vw;
             height: auto;
@@ -31,13 +71,13 @@
             margin: 0px;
             color: aliceblue;
             gap: 20px;
-            border: 1px solid black;
         }
 
         .tamplet {
+            position: relative;
             display: grid;
-            width: 400px;
-            height: 600px;
+            width: 70vw;
+            height: 60vh;
             background-color: rgb(0, 0, 0);
             padding: 10px;
             border-radius: 10px;
@@ -46,20 +86,45 @@
         }
         
         .tamplet img {
-            width: 400px;
-            height: 400px;
+            width: 100%;
+            height: 250px;
             object-fit: cover;
             border-radius: 10px;
         }
 
         .tamplet button {
-            width: 400px;
+            width: 100%;
             background-color: rgb(181, 255, 185);
             border-radius: 10px;
         }
+
+        .offer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: rgb(165, 21, 21);
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .tamplet p {
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 10px;
+            font-size: medium;
+        }
+
+        h1 {
+            position: relative; 
+            color: red;
+            top: 0px;
+        }
     }
 
-    @media only screen and (min-width: 600px) {
+    @media screen and (min-width: 600px) {
         main {
             position: relative;
             width: 100vw;
@@ -72,19 +137,21 @@
             position: relative;
             display: grid;
             grid-template-columns: auto auto auto auto auto auto auto auto;
-            align-items: baseline;
-            justify-self: right;
+            align-items: center;
+            justify-content: center;
             word-wrap: break-word;
             color: aliceblue;
-            background-color: rgb(177, 177, 177);
+            background-color: rgb(11, 130, 134);
             margin: 10px;
-            gap: 10px;
-            width:1100px; 
+            gap: 20px;
+            width: 1150px;
+            height: 1500px;
             margin-left: 20px; 
             align-self:center;
         }
 
         .tamplet {
+            position: relative;
             display: grid;
             width: 100px;
             height: 200px;
@@ -116,6 +183,7 @@
 
     body {
         display: flex;
+        align-items: center;
         flex-direction: column;
         height: 100vh;
         width: 100vw;
@@ -123,17 +191,9 @@
         overflow-x: hidden;
     }
 
-    main img {
-        grid-area: img;
-    }
-
     h2 {
         align-self: center;
         background-color: rgb(241, 241, 241);
-    }
-
-    h1 {
-        color: red;
     }
 
     .content h1, p{
@@ -153,127 +213,259 @@
         z-index: 2;
     }
 
-    .tamplet p {
-        color: rgb(255, 255, 255);
+    footer {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        width: 95vw;
+        height: 400px;
+        background-color: black;
         text-align: center;
+    }
+
+    footer a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .about_close {
+        opacity: 0;
+        transition-duration: 0.5s;
+        backdrop-filter: blur(0px);
+        display: none;
+    }
+
+    .about {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        backdrop-filter: blur(10px);
+        z-index: 10;
+        transition-duration: 0.5s;
+    }
+
+    .about h1 {
+        margin: 10px;
+        background-color: aliceblue;
+    }
+
+    .about2 {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .about2 p {
+        background-color: aliceblue;
         padding: 10px;
     }
+
 </style>
 <body>
     <h2>Welcome, This is HomePage of 2 Strome Sports</h2>
     <main>
         <img src="logo/adv3.gif" alt="main_animation" width="400px">
-        <div class="content">
+        <div class="content1">
             <p><strong>N</strong>ew session is about to start!!!, so we thought why not give some discount on sports wear and stationery.</p>
         </div>
     </main>
-    <div class="content" style="">
-        <h3>Products</h3><br>
+    <div class="content">
         <div class="tamplet">
+            <div class="offer">
+                <h1>50%</h1><p><s>Rs.1000</s><br>Rs.1000</p>
+            </div>
             <img src="img/IMG-20211010-WA0002.jpg" width="100" height="100">
-            <p>Price: Rs.500</p>
+            <p>Product Name:</p>
+            <p>Product: </p>
+            <p>Upper:</p>
             <button>Buy</button>
         </div>
         <div class="tamplet">
+            <div class="offer">
+                <h1>50%</h1><p><s>Rs.1000</s><br>Rs.1000</p>
+            </div>
             <img src="img/IMG-20211010-WA0004.jpg" width="100" height="100">
             <p>Price: Rs.500</p>
             <button>Buy</button>
         </div>
         <div class="tamplet">
+            <div class="offer">
+                <h1>50%</h1><p><s>Rs.1000</s><br>Rs.1000</p>
+            </div>
             <img src="img/IMG-20211010-WA0008.jpg" width="100" height="100">
             <p>Price: Rs.500</p>
             <button>Buy</button>
         </div>
         <div class="tamplet">
+            <div class="offer">
+                <h1>50%</h1><p><s>Rs.1000</s><br>Rs.1000</p>
+            </div>
             <img src="img/IMG-20211010-WA0009.jpg" width="100" height="100">
             <p>Price: Rs.500</p>
             <button>Buy</button>
         </div>
         <div class="tamplet">
+            <div class="offer">
+                <h1>50%</h1><p><s>Rs.1000</s><br>Rs.1000</p>
+            </div>
             <img src="img/IMG-20211010-WA0010.jpg" width="100" height="100">
             <p>Price: Rs.500</p>
             <button>Buy</button>
         </div>
         <div class="tamplet">
+            <div class="offer">
+                <h1>50%</h1><p><s>Rs.1000</s><br>Rs.1000</p>
+            </div>
             <img src="img/IMG-20220305-WA0027.jpg" width="100" height="100">
             <p>Price: Rs.500</p>
             <button>Buy</button>
         </div>
         <div class="tamplet">
+            <div class="offer">
+                <h1>50%</h1><p><s>Rs.1000</s><br>Rs.1000</p>
+            </div>
             <img src="img/IMG-20220305-WA0028.jpg" width="100" height="100">
             <p>Price: Rs.500</p>
             <button>Buy</button>
         </div>
         <div class="tamplet">
+            <div class="offer">
+                <h1>50%</h1><p><s>Rs.1000</s><br>Rs.1000</p>
+            </div>
             <img src="img/IMG-20220305-WA0031.jpg" width="100" height="100">
             <p>Price: Rs.500</p>
             <button>Buy</button>
         </div>
         <div class="tamplet">
+            <div class="offer">
+                <h1>50%</h1><p><s>Rs.1000</s><br>Rs.1000</p>
+            </div>
             <img src="img/IMG-20220305-WA0032.jpg" width="100" height="100">
             <p>Price: Rs.500</p>
             <button>Buy</button>
         </div>
         <div class="tamplet">
+            <div class="offer">
+                <h1>50%</h1><p><s>Rs.1000</s><br>Rs.1000</p>
+            </div>
             <img src="img/IMG-20220305-WA0033.jpg" width="100" height="100">
             <p>Price: Rs.500</p>
             <button>Buy</button>
         </div>
         <div class="tamplet">
+            <div class="offer">
+                <h1>50%</h1><p><s>Rs.1000</s><br>Rs.1000</p>
+            </div>
             <img src="img/IMG-20220305-WA0034.jpg" width="100" height="100">
             <p>Price: Rs.500</p>
             <button>Buy</button>
         </div>
         <div class="tamplet">
+            <div class="offer">
+                <h1>50%</h1><p><s>Rs.1000</s><br>Rs.1000</p>
+            </div>
             <img src="img/IMG-20220305-WA0035.jpg" width="100" height="100">
             <p>Price: Rs.500</p>
             <button>Buy</button>
         </div>
         <div class="tamplet">
+            <div class="offer">
+                <h1>50%</h1><p><s>Rs.1000</s><br>Rs.1000</p>
+            </div>
             <img src="img/IMG-20220305-WA0036.jpg" width="100" height="100">
             <p>Price: Rs.500</p>
             <button>Buy</button>
         </div>
         <div class="tamplet">
+            <div class="offer">
+                <h1>50%</h1><p><s>Rs.1000</s><br>Rs.1000</p>
+            </div>
             <img src="img/IMG-20220305-WA0037.jpg" width="100" height="100">
             <p>Price: Rs.500</p>
             <button>Buy</button>
         </div>
         <div class="tamplet">
+            <div class="offer">
+                <h1>50%</h1><p><s>Rs.1000</s><br>Rs.1000</p>
+            </div>
             <img src="img/IMG-20220309-WA0005.jpg" width="100" height="100">
             <p>Price: Rs.500</p>
             <button>Buy</button>
         </div>
         <div class="tamplet">
+            <div class="offer">
+                <h1>50%</h1><p><s>Rs.1000</s><br>Rs.1000</p>
+            </div>
             <img src="img/IMG-20220309-WA0006.jpg" width="100" height="100">
             <p>Price: Rs.500</p>
             <button>Buy</button>
         </div>
         <div class="tamplet">
+            <div class="offer">
+                <h1>50%</h1><p><s>Rs.1000</s><br>Rs.1000</p>
+            </div>
             <img src="img/IMG-20220309-WA0007.jpg" width="100" height="100">
             <p>Price: Rs.500</p>
             <button>Buy</button>
         </div>
         <div class="tamplet">
+            <div class="offer">
+                <h1>50%</h1><p><s>Rs.1000</s><br>Rs.1000</p>
+            </div>
             <img src="img/IMG-20220309-WA0008.jpg" width="100" height="100">
             <p>Price: Rs.500</p>
             <button>Buy</button>
         </div>
         <div class="tamplet">
+            <div class="offer">
+                <h1>50%</h1><p><s>Rs.1000</s><br>Rs.1000</p>
+            </div>
             <img src="img/IMG-20220309-WA0008.jpg" width="100" height="100">
             <p>Price: Rs.500</p>
             <button>Buy</button>
         </div>
         <div class="tamplet">
+            <div class="offer">
+                <h1>50%</h1><p><s>Rs.1000</s><br>Rs.1000</p>
+            </div>
             <img src="img/IMG-20220309-WA0009.jpg" width="100" height="100">
             <p>Price: Rs.500</p>
             <button>Buy</button>
         </div>
         <div class="tamplet">
+            <div class="offer">
+                <h1>50%</h1><p><s>Rs.1000</s><br>Rs.1000</p>
+            </div>
             <img src="img/IMG-20220309-WA0010.jpg" width="100" height="100">
             <p>Price: Rs.500</p>
             <button>Buy</button>
         </div>
     </div>
+    <footer>
+        <a onclick="about_open()" href="#" title="click to know about site developer and owner">About</a>
+    </footer>
+    <div id="about" class="about_close">
+        <h1>About</h1>
+        <div class="about2">
+            <button onclick="about_close()" style="background-color: rgb(149, 99, 230); color: aliceblue; margin: 10px;">Close</button>
+            <img src="img/about.jpg" alt="Deepak Chamoli" width="200">
+            <p>Name: mr.Deepak Chamoli</p>
+            <p>Mobile: +91 8979340745</p>
+        </div>
+    </div>
+    <script>
+        function about_open() {
+            scrollTo(0, 0);
+            document.getElementById("about").setAttribute("class", "about");
+        }
+
+        function about_close() {
+            scrollTo(0, 10000);
+            document.getElementById("about").setAttribute("class", "about_close");
+        }
+    </script>
 </body>
 </html>
